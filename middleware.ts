@@ -19,16 +19,16 @@ export const config = {
 
 export default function middleware(request: Request) {
     console.log('inside middleware')
-    const url = new URL(request.url);
-    const { country } = geolocation(request);
-    const countryCode = country || 'UNKNOWN';
+    // const url = new URL(request.url);
+    // const { country } = geolocation(request);
+    // const countryCode = country || 'UNKNOWN';
 
-    if (
-        BLOCKED_COUNTRIES.includes(countryCode)
-    ) {
-        console.log(`Country ${countryCode} is blocked`)
-        return new Response('AI agent app not available in your country', { status: 403 });
-    }
+    // if (
+    //     BLOCKED_COUNTRIES.includes(countryCode)
+    // ) {
+    //     console.log(`Country ${countryCode} is blocked`)
+    //     return new Response('AI agent app not available in your country', { status: 403 });
+    // }
 
     return next();
 }
